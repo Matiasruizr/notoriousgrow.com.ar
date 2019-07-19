@@ -1,16 +1,21 @@
 <template>
   <section class="section">
+    
     <div class=" logo column is-12">
-      <img src="~/assets/logo-notorious.png">
+      <img class="logo-img" src="~/assets/logo-notorious.png">
+      <img src="~/assets/growshoponline.png">
     </div>
       <div class="btn column is-6">
-        <a href="https://notorious.cl/"><h1>Notorious Chile</h1>
+        <a href="https://notorious.cl/"><h1>Chile</h1>
         <img src="~/assets/chile.png"></a>
-      </div>
-      <div class="btn column is-6">
-        <a href="http://notoriousgrow.com.ar/"><h1>Notorious Argentina</h1>
+        <hr>
+        <a href="http://notoriousgrow.com.ar/"><h1>Argentina</h1>
         <img src="~/assets/argentina.png"></a>
       </div>
+      <div class="frase column is-6">
+        <img src="~/assets/frase.png">
+      </div>
+    
   </section>
 </template>
 
@@ -26,22 +31,38 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.section{
+  float: left;
+  width: 100%;
+}
+
 .logo{
   width: 100%;
   float: left;
   img{
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 35px;
+    @media screen and(max-width: 426px){
+      width: 100%;
+    }
+  }
+  .logo-img{
     width: 15%;
+    float: left;
+    margin: 0;
+    @media screen and(max-width:426px){
     display: block;
     margin: 0 auto;
-    @media screen and(max-width:426px){
+    float: none;
       width: 30%;
     }
   }
 }
-.btn{
-  
-  margin: 60px 0 110px 0;
+.frase{
   float: left;
+  margin: 170px 0 110px 0;
   @media screen and(max-width:769px){
     width: 50%;
     margin-bottom: 130px;
@@ -56,20 +77,46 @@ export default {
   @media screen and(max-width:321px){
     margin: 30px 0;
   }
-  h1{
-    font-weight: bold;
-    color: #ffffff;
-    float: left;
-    margin-bottom: 30px;
-    font-size: 32px;
+}
+.btn{
+  
+  margin: 170px 0 110px 0;
+  float: left;
+  @media screen and(max-width:769px){
+    width: 50%;
+    margin-bottom: 130px;
+  }
+  @media screen and(max-width:426px){
     width: 100%;
+    margin: 18px 0;
+    margin-top: 120px;
+  }
+  @media screen and(max-width:376px){
+    margin: 28px 0;
+    margin-top: 120px;
+  }
+  @media screen and(max-width:321px){
+    margin: 30px 0;
+    margin-top: 120px;
+  }
+  hr{
+    background-color: #000;
+  }
+  h1{
+    color: #000;
+    float: left;
+    font-family: 'PunkRocker';
+    margin-bottom: 30px;
+    font-size: 70px;
+    width: 40%;
     text-align: center;
     transition: 200ms;
     &:hover{
       color: #7e005a;
     }
     @media screen and(max-width:426px){
-      font-size:25px;
+      font-size:70px;
+      width: 100%;
     }
   }
   img{
@@ -77,8 +124,14 @@ export default {
     margin: 0 auto;
     width: 40%;
     transition: 200ms;
+    @media screen and(max-width:426px){
+      width: 70%;
+    }
     &:hover{
       transform: scale(1.1);
+      -webkit-box-shadow: 0px 0px 38px -13px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 38px -13px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 38px -13px rgba(0,0,0,0.75);
     }
   }
 }

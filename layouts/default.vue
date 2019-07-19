@@ -1,32 +1,16 @@
 <template>
-  <div class="bg">
-    <nav
-      class="navbar header has-shadow is-dark"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
-        <a
-          class="navbar-item"
-          href="/"
-        >
-          <img
-            src="~/assets/logo-notorious.png"
-            alt="Buefy"
-            height="28"
-          >
-        </a>
-
-        
-      </div>
-    </nav>
+  <div>
+    
 
     <section class="main-content columns">
-      
+    <img class="img-desktop-top" src="~/assets/imgtopdesktop.png">
+    <img class="img-mobile-top" src="~/assets/imgtopmobile.png">
 
-      <div class="container column is-10">
+      <div class="container column is-12">
         <nuxt />
       </div>
+    <img class="img-mobile-bottom" src="~/assets/imgbottommobile.png">
+    <img class="img-desktop-bottom" src="~/assets/imgbottomdesktop.png">
     </section>
   </div>
 </template>
@@ -52,12 +36,38 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.bg{
-  background: url(~assets/cannabis.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  @media screen and(max-width:769px){
-     float: left;
+.img-mobile-top,.img-mobile-bottom{
+  display: none;
+  @media screen and(max-width:426px){
+    display:block;
+  }
+}
+.img-desktop-top,.img-desktop-bottom{
+  display: block;
+  @media screen and(max-width:426px){
+    display:none;
+  }
+}
+.img-desktop-top,.img-mobile-top{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.img-desktop-bottom,.img-mobile-bottom{
+  position: absolute;
+  bottom: -200px;
+  left: 0;
+}
+.img-desktop-bottom{
+  bottom: -350px;
+}
+.img-mobile-bottom{
+  bottom: -720px;
+  @media screen and(max-width:376px){
+    bottom: -600px;
+  }
+  @media screen and(max-width:321px){
+    bottom: -520px;
   }
 }
 .columns{
@@ -67,7 +77,7 @@ export default {
   }
 }
 .main-content{
-  background: rgba(27, 26, 27, 0.7);
+  height: 930px;
   @media screen and(max-width:769px){
     float: left;
   }
@@ -81,6 +91,9 @@ export default {
     width: 50px;
     max-height: none;
   }
+}
+.container{
+  float: left;
 }
 </style>
 
