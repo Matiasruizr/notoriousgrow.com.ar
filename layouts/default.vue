@@ -1,7 +1,5 @@
 <template>
   <div>
-    
-
     <section class="main-content columns">
     <img class="img-desktop-top" src="~/assets/imgtopdesktop.png">
     <img class="img-mobile-top" src="~/assets/imgtopmobile.png">
