@@ -19,15 +19,43 @@
     
   </section>
 </template>
-
 <script>
 import Card from '~/components/Card'
+import axios from 'axios'
 
 export default {
   name: 'HomePage',
+  date(){
+    return{
+      country: ''
+    }
+  },
 
   components: {
     Card
+  },
+  mounted(){
+    let self = this
+    axios.get(`https://ipapi.co/json/`,{
+      headers: {
+        'Content-Type': 'aplication/json',
+      }
+    })
+    .then(function(response) {
+      console.log(response.data.country);
+      self.country=response.data.country;
+      if (self.country == 'CL'){
+        console.log(self.country)
+        location.replace('https://notorious.cl/')
+      };
+      if (self.country == 'AR') {
+        console.log(self.country)
+        location.replace('http://notoriousgrow.com.ar/')
+      }
+    })
+    .catch(function(error){
+          console.log(error)
+    })
   }
 }
 </script>
