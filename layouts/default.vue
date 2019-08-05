@@ -58,14 +58,20 @@ export default {
 }
 .img-desktop-bottom{
   bottom: -350px;
+  @media screen and(max-width:1025px){
+    bottom: -270px;
+  }
+  @media screen and(max-width:769px){
+    bottom: -170px;
+  }
 }
 .img-mobile-bottom{
-  bottom: -720px;
+  bottom: -835px;
   @media screen and(max-width:376px){
-    bottom: -600px;
+    bottom: -730px;
   }
   @media screen and(max-width:321px){
-    bottom: -520px;
+    bottom: -640px;
   }
 }
 .columns{
@@ -75,7 +81,6 @@ export default {
   }
 }
 .main-content{
-  height: 930px;
   @media screen and(max-width:769px){
     float: left;
   }
