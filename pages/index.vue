@@ -14,7 +14,7 @@
       </div>
       <div class="frase column is-6">
         <img src="~/assets/frase.png">
-        <a href="http://notorious.cl/blog/">Notorious Blog</a>
+        <a href="http://notorious.cl/blog/">Visita nuestro Blog</a>
       </div>
     
   </section>
@@ -91,6 +91,7 @@ export default {
 }
 .frase{
   float: left;
+  display: block;
   margin: 170px 0 110px 0;
   @media screen and(max-width:769px){
     width: 50%;
@@ -111,10 +112,10 @@ export default {
   }
   a{
     margin: 0 auto;
-    margin-left: 33%;
     margin-top: 40px;
     font-size: 20px;
-    float: left;
+    width:fit-content;
+    display: block;
     padding: 10px 30px;
     border: solid 1px #fff;
     font-weight: bold;
@@ -122,20 +123,9 @@ export default {
     color: #ffffff;
     background: #7e005a;
     transition: 300ms;
-    @media screen and(max-width:1025px){
-    margin-left: 27%;
-  }
-     @media screen and(max-width:769px){
-    margin-left: 20%;
-  }
     @media screen and(max-width:426px){
-     font-size: 16px;
-     margin-left: 27%;
-     padding: 5px 15px; 
+      font-size: 16px;
     }
-    @media screen and(max-width:321px){
-    margin-left: 19%;
-  }
     &:hover{
       border-color: #7e005a;
       background: #fff;
