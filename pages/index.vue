@@ -28,7 +28,7 @@ export default {
     Header,
     Hero,
     Paises,
-    Footerard
+    Footer
   },
   mounted(){
     // let self = this
