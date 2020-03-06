@@ -1,25 +1,31 @@
 <template>
-    <section class="hero  is-fullheight-with-navbar">
+    <section class="hero  is-fullheight-with-navbar" >
         <div class="hero-body">
             <div class="container">
                 <div class="contenedor_texto">
-                    <h1>Te estamos rederigiendo a</h1>
-                    <h2>Notorious.cl</h2>
-                    <h3>En <strong>3</strong> segundos</h3>
-                    <b-button type="is-dark"
-                        inverted
-                        outlined
-                        class="cancelar"
-                        >
-                        Cancelar redirección
-                    </b-button>
-                    <h4>¿Te gustaria saber más?</h4>
-                    <b-button type="is-dark"
-                        inverted
-                        class="blog"
-                        >
-                        <span>Visita nuestro blog</span>
-                    </b-button>
+                    <template v-if="country == 'CL' || country == 'ARd'">
+                        <h1>Te estamos rederigiendo a</h1>
+                        <h2 v-if="country == 'CL'">Notorious.cl</h2>
+                        <h2 v-if="country == 'AR'">Notoriousgrow.com.ar</h2>
+                        <h3>En <strong>3</strong> segundos</h3>
+                        <b-button type="is-dark"
+                            inverted
+                            outlined
+                            class="cancelar"
+                            >
+                            Cancelar redirección
+                        </b-button>
+                    </template>
+                    <template v-else>
+                        <h1>Bienvenido a NotoriousGrow</h1>
+                        <h2>El growshop más grande de Sudamerica</h2>
+                      
+                    </template>
+                    <h4>¿Te gustaria saber más de nosotros?</h4>
+                    <a class="button" href="https://notorious.cl/blog/" target="_blank" >
+                        Visita nuestro blog 
+                    </a>
+           
                 </div>
                 <div class="contenedor_imagen">
                     
@@ -42,7 +48,8 @@
 </template>
 <script>
 export default {
-    name: "Hero"
+    name: "Hero",
+    props: ['country']
 }
 </script>
 <style lang="scss" scoped>
