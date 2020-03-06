@@ -64,10 +64,17 @@ export default {
         margin-top: -5%;
         h1{
             font-size: 2.9vw;
-            
+            @media(max-width: 768px) {
+                font-size: 17px;
+                margin-bottom: 15px;
+            }
         }
         h2{
             font-size: 2.5vw;
+            @media(max-width: 768px) {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
         }
         h3{
             font-size: 1.5vw;
@@ -75,6 +82,9 @@ export default {
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;;
             strong{
                 color: white;
+            }
+            @media(max-width: 768px) {
+                font-size: 13px;
             }
             
         }
@@ -84,7 +94,10 @@ export default {
         }
         h4{
             font-size: 1.5vw;
-            margin-bottom: 20px
+            margin-bottom: 20px;
+            @media(max-width: 768px) {
+                font-size: 13px;
+            }
         }
         .blog{
             font-size: 1vw;
@@ -112,5 +125,14 @@ export default {
         font-size: 1.5vw;
         margin-top: 5%
     }
-
+   .hero-body{
+       @media(max-width: 768px) {
+          display: block!important; 
+       }
+   }
+   .hero.is-fullheight-with-navbar {
+        @media(max-width: 768px) {
+            min-height: auto;
+        }
+   }
 </style>

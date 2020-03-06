@@ -11,7 +11,7 @@ export default {
     name:'Header'
 }
 </script>
-<style lang="css" scoped>
+<style lang="scss" scoped>
     .contenedor{
         display: flex;
         justify-content: center
@@ -20,10 +20,18 @@ export default {
     h1{
         text-align: center;
         font-size: 3vw;
+        @media(max-width: 768px) {
+            margin-top: 5px;
+            font-size: 18px;
+        }
     }
     img{
         width: 5vw;
         height: 5vw;
         margin-right: 32px;
+        @media(max-width: 768px) {
+            width: 45px;
+            height: 45px;
+        }
     }
 </style>
