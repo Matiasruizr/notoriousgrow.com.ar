@@ -14,10 +14,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .section {
-    @media (max-width: 768px) {
-      padding: 3rem 1rem;
-    }
-  }
+
 </style>
 
