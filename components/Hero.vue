@@ -31,8 +31,8 @@
       </div>
     </div>
     <div class="is-block has-text-centered">
-      <div class="cursor" @click="scrollDown('.banderas')">
-        <b-icon class="icono" icon="chevron-down" size="is-small"></b-icon>
+      <div class="cursor" @click="scrollDown()">
+        <b-icon class="icono" :icon="toggleIcon" size="is-small"></b-icon>
       </div>
       <p>Si no se te redirecciona automáticamente, por favor haz click en la bandera que corresponda</p>
     </div>
@@ -42,9 +42,24 @@
 export default {
   name: "Hero",
   props: ["country"],
+  data() {
+    return {
+      togglePosition: false,
+      toggleIcon: "chevron-down"
+    };
+  },
   methods: {
-    scrollDown(e) {
-      let element = document.querySelector(e);
+    scrollDown() {
+      this.togglePosition = !this.togglePosition;
+      let div;
+      if (this.togglePosition == true) {
+        div = ".banderas";
+        this.toggleIcon = "chevron-up";
+      } else {
+        div = ".hero";
+        this.toggleIcon = "chevron-down";
+      }
+      let element = document.querySelector(div);
       element.scrollIntoView({ behavior: "smooth", block: "end" });
     }
   }
@@ -52,10 +67,12 @@ export default {
 </script>
 <style lang="scss" scoped>
 .cursor:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 .contenedor_texto {
-  //   padding: 10vw 0;
+  @media (max-width: 767px) {
+    text-align: center;
+  }
   margin-top: -5%;
   h1 {
     font-size: 2.9vw;
@@ -102,11 +119,12 @@ export default {
 }
 .contenedor_imagen {
   background-image: url("../assets/img/mari.png");
-  background-position: right center;
-  background-size: contain;
+  background-position: bottom;
+  background-size: 70%;
   background-repeat: no-repeat;
   @media (min-width: 768px) {
     background-size: 50%;
+    background-position: right center;
   }
 }
 .icono {
@@ -117,13 +135,10 @@ export default {
   height: $size;
   width: $size;
   border-radius: 50%;
-  position: absolute;
-  margin-top: -180px;
-  @media (min-width: 768px) {
-    
-font-size: calc(#{$size} / 3);
-  height: calc(#{$size} / 3);
-  width: calc(#{$size} / 3);
+  @media (min-width: 545px) {
+    font-size: calc(#{$size} / 3);
+    height: calc(#{$size} / 3);
+    width: calc(#{$size} / 3);
   }
 }
 p {
