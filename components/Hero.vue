@@ -1,8 +1,8 @@
 <template>
   <section class="hero is-fullheight-with-navbar">
-    <div class="hero-body is-paddingless">
-      <div class="container contenedor_imagen">
-        <div class="columns is-centered-mobile py-3">
+    <div class="hero-body contenedor_imagen">
+      <div class="container">
+        <div class="columns is-centered-mobile">
           <div class="column is-half-desktop">
             <div class="contenedor_texto">
               <template v-if="country == 'CL' || country == 'ARd'">
@@ -56,7 +56,7 @@ export default {
         div = ".banderas";
         this.toggleIcon = "chevron-up";
       } else {
-        div = ".contenedor";
+        div = ".hero";
         this.toggleIcon = "chevron-down";
       }
       let element = document.querySelector(div);
@@ -66,11 +66,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@media (min-width: 768px) {
-  .py-3 {
-    padding: 5em 0;
-  }
-}
 .cursor:hover {
   cursor: pointer;
 }
@@ -125,7 +120,7 @@ export default {
 .contenedor_imagen {
   background-image: url("../assets/img/mari.png");
   background-position: bottom;
-  background-size: 70%;
+  background-size: 75%;
   background-repeat: no-repeat;
   @media (min-width: 768px) {
     background-size: 50%;
