@@ -1,8 +1,8 @@
 <template>
   <section class="hero is-fullheight-with-navbar">
-    <div class="hero-body">
+    <div class="hero-body is-paddingless">
       <div class="container contenedor_imagen">
-        <div class="columns is-centered-mobile">
+        <div class="columns is-centered-mobile py-3">
           <div class="column is-half-desktop">
             <div class="contenedor_texto">
               <template v-if="country == 'CL' || country == 'ARd'">
@@ -56,7 +56,7 @@ export default {
         div = ".banderas";
         this.toggleIcon = "chevron-up";
       } else {
-        div = ".hero";
+        div = ".contenedor";
         this.toggleIcon = "chevron-down";
       }
       let element = document.querySelector(div);
@@ -66,6 +66,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@media (min-width: 768px) {
+  .py-3 {
+    padding: 5em 0;
+  }
+}
 .cursor:hover {
   cursor: pointer;
 }
