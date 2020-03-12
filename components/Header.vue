@@ -14,7 +14,8 @@ export default {
 <style lang="scss" scoped>
     .contenedor{
         display: flex;
-        justify-content: center
+        justify-content: center;
+        align-items: center;
 
     }
     h1{
@@ -26,12 +27,14 @@ export default {
         }
     }
     img{
-        width: 5vw;
-        height: 5vw;
+        object-fit: contain;
+        width: 6vw;
+        height: 6vw;
         margin-right: 32px;
         @media(max-width: 768px) {
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
         }
     }
 </style>
