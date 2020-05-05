@@ -2,7 +2,7 @@
   "name": "notoriousgrow",
   "version": "1.0.0",
   "description": "Landing Page de notoriousgrow",
-  "author": "totomas",
+  "author": "Digital Jump",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -16,6 +16,7 @@
     "nuxt": "^2.11.0",
     "nuxt-buefy": "^0.3.2",
     "sass-loader": "^7.1.0",
+    "vue-instagram": "^3.0.0",
     "webpack": "^4.35.3"
   },
   "devDependencies": {

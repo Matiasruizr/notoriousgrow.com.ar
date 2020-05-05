@@ -33,6 +33,7 @@
     <div class="container">
       <div class="columns is-centered">
         <div class="column">
+          <!-- <VueInstagram :token="" /> -->
           <p class="foot">
             Sitio diseñado y desarrollado por
             <strong
@@ -46,8 +47,12 @@
   </section>
 </template>
 <script>
+
 export default {
-  name: "Footer"
+  name: "Footer",
+  created() {
+    // axios.get('https://api.instagram.com/v1/users/self/?access_token=ACCESS-TOKEN')
+  }
 }
 </script>
 <style lang="scss" scoped>
